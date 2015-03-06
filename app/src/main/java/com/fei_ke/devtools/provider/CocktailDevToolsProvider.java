@@ -9,12 +9,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.RemoteViews;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fei_ke.devtools.R;
 import com.samsung.android.sdk.look.cocktailbar.SlookCocktailManager;
 import com.samsung.android.sdk.look.cocktailbar.SlookCocktailProvider;
+
 
 /**
  * Created by 杨金阳 on 28/2/2015.
@@ -69,7 +73,19 @@ public class CocktailDevToolsProvider extends SlookCocktailProvider {
 
     private void showTopActivityInfo(Context context) {
         ComponentName cn = getTopComponent(context);
-        Toast.makeText(context, cn.getClassName(), Toast.LENGTH_SHORT).show();
+
+        MaterialDialog alertDialog = new MaterialDialog.Builder(context)
+                .title("TopActivity")
+                .customView(R.layout.layout_top_activity_info, true)
+                .positiveText("OK")
+                .build();
+
+        View view = alertDialog.getCustomView();
+        ((TextView) view.findViewById(R.id.textViewPackageName)).setText(cn.getPackageName());
+        ((TextView) view.findViewById(R.id.textViewClassName)).setText(cn.getClassName());
+
+        alertDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        alertDialog.show();
     }
 
     private void showAppInfo(Context context) {

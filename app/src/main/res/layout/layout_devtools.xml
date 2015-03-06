@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    tools:background="@android:color/black">
 
     <ImageView
         android:id="@+id/btn_app_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_info_details"/>
+        android:src="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+        android:background="@drawable/widget_selector"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -21,12 +24,12 @@
         android:text="信息"/>
 
     <ImageView
-        android:padding="5dp"
         android:layout_marginTop="50dp"
         android:id="@+id/btn_top_activity_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_dialog_info"/>
+        android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:background="@drawable/widget_selector"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -34,5 +37,5 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:textSize="11dp"
-        android:text="类名"/>
+        android:text="详情"/>
 </LinearLayout>

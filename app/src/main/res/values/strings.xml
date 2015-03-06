@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="cocktail_name">@string/app_name</string>
     <string name="description">description</string>
+    <string name="package_name">包名</string>
+    <string name="class_name">类名</string>
 </resources>
